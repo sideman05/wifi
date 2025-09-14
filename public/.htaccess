@@ -1,0 +1,20 @@
+RewriteEngine On
+
+
+RewriteCond %{THE_REQUEST} \s([^.]+)\.php[?\s] [NC]
+RewriteRule ^ %1 [R=301,L]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^([^/]+)$ $1.php [L]
+
+
+<IfModule mod_headers.c>
+    Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
+    Header set Pragma "no-cache"
+</IfModule>
+
+<FilesMatch "config.php|db.php">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
