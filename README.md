@@ -37,5 +37,5 @@ A PHP-based WiFi Billing System that allows managing users, plans, and payments 
 
 1. **Clone the project**
 ```bash
-git clone https://github.com/yourusername/wifi-billing.git
+git clone https://github.com/sideman05/wifi.git
 cd wifi-billing
